@@ -40,7 +40,7 @@ describe('Wordle', () => {
       'Green',
     ])
   })
-  it('Special Case: Arol being mean', () => {
+  it('Special Case: Yellow before Green', () => {
     expect(wordle('aiaxx', 'xxxia')).toEqual([
       'Yellow',
       'Yellow',
