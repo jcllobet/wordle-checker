@@ -49,4 +49,11 @@ describe('Wordle', () => {
       'Yellow',
     ])
   })
+  it('Performance Test', () => {
+    let i = 0
+    while (i < 10000) {
+      wordle('aiaxx', 'xxxia')
+      i++
+    }
+  })
 })
