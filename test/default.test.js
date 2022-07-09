@@ -35,9 +35,18 @@ describe('Wordle', () => {
     expect(wordle('aiaia', 'iaiia')).toEqual([
       'Yellow',
       'Yellow',
+      'Gray',
+      'Green',
+      'Green',
+    ])
+  })
+  it('Special Case: Arol being mean', () => {
+    expect(wordle('aiaxx', 'xxxia')).toEqual([
       'Yellow',
-      'Green',
-      'Green',
+      'Yellow',
+      'Gray',
+      'Yellow',
+      'Yellow',
     ])
   })
 })

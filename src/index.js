@@ -1,19 +1,21 @@
 function wordle(guess, wordle) {
-  let guessArr = guess.split('')
-  let wordleArr = wordle.split('')
-  let result = []
+  let guessArr = Array.from(guess)
+  let wordleArr = Array.from(wordle)
+  let result = new Array(5).fill('Gray')
+
+  for (let j = 0; j < guessArr.length; j++) {
+    if (guessArr[j] === wordleArr[j]) {
+      result[j] = 'Green'
+      wordleArr[j] = '.'
+    }
+  }
+
   for (let i = 0; i < guessArr.length; i++) {
-    let letter = guessArr[i]
+    const letter = guessArr[i]
     let index = wordleArr.indexOf(letter)
-    if (letter === wordleArr[i]) {
-      result.push('Green')
-    } else if (
-      wordle.includes(letter) && // letter in array
-      !(guessArr[index] === wordleArr[index]) // letter not green somewhere else in
-    ) {
-      result.push('Yellow')
-    } else {
-      result.push('Gray')
+    if (index !== -1 && wordleArr[i] !== '.') {
+      result[i] = 'Yellow'
+      wordleArr[index] = '-'
     }
   }
   return result
@@ -21,6 +23,4 @@ function wordle(guess, wordle) {
 
 export default wordle
 
-//wordle('steak', 'stake') // returns ["Green", "Green", "Yellow", "Yellow", "Yellow"]
-//wordle('aiaia', 'iaiia')
-//console.log(wordle('aiaia', 'xxxia'))
+console.log(wordle('aiaxx', 'xxxia'))

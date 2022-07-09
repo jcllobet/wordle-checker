@@ -5,8 +5,8 @@
   "main": "dist/main.js",
   "module": "dist/module.js",
   "source": "src/index.js",
-  "repository": "git@github.com:arol-dev/wordle-checker.git",
-  "author": "Arol <arol.vinolas@gmail.com>",
+  "repository": "git@github.com:jcllobet/wordle-checker.git",
+  "author": "Jan <jcllobet@gmail.com>",
   "license": "See License in LICENSE.md",
   "private": true,
   "devDependencies": {
